@@ -1,0 +1,10 @@
+.navbar {
+    background-color: aqua;
+    padding: 10px;
+  }
+  
+  .navbar h1 {
+    margin-left: 200px; /* Adds space around the element */
+    padding: 10px; /* Adds internal spacing */
+    text-align: center; /* Centers the text */
+  }

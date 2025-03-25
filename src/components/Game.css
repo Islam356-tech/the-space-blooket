@@ -1,0 +1,15 @@
+.rectangle {
+  width: 400px;           /* Set the width of the rectangle */
+  height: 500px;          /* Set the height of the rectangle */
+  background-color: yellowgreen;
+  position: absolute;     /* Use absolute positioning */
+  left: 0;                /* Align it to the left edge */
+  top: 89px;              /* Offset from the top (adjust as needed) */
+  border: 1px solid black;    
+}
+.game {
+  height: 500px;
+}
+#free {
+  bottom: 780px;
+}

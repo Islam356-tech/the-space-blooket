@@ -1,0 +1,70 @@
+/* Layout styling */
+.journey-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #0a0a29, #000);
+  color: white;
+  padding: 40px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 30px;
+  color: #FFD700;
+}
+
+/* Rows of 5 planets */
+.planet-row {
+  display: flex;
+  justify-content: space-around;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+/* Individual planet card */
+.planet-card {
+  width: 220px;
+  background: #1c1c3c;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.planet-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 25px rgba(255, 215, 0, 0.8);
+}
+
+/* Planet image */
+.planet-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+/* Planet info */
+.planet-info {
+  padding: 15px;
+}
+
+.planet-info h2 {
+  font-size: 1.5rem;
+  margin: 10px 0;
+  color: #FFD700;
+}
+
+.planet-info p {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+
+.subject {
+  display: inline-block;
+  background: #4CAF50;
+  color: #fff;
+  padding: 5px 10px;
+  font-size: 0.8rem;
+  border-radius: 15px;
+  margin-top: 10px;
+}
