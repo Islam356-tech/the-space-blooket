@@ -7,6 +7,9 @@ import UserProfileDashboard from "./signedcomponets/Dashboard";
 import UpgradeToPROHACKERINFINTE from "./signedcomponets/upgrade";
 import User from "./usersfunction/userhome";
 import KidsJourney from "./usersfunction/kidsjourney";
+import Market from "./usersfunction/Market";
+import QuizGame from "./usersfunction/QuizGame";
+import GameManager from "./usersfunction/GameManager";
 
 const App = () => {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -26,6 +29,10 @@ const App = () => {
       <Route path="/userhome" element={<User />} />
       <Route path="/kidsjourney" element={<KidsJourney />} /> 
         <Route path="/upgradeforprohackerinfinte" element={isAuthenticated ? <UpgradeToPROHACKERINFINTE /> : <Navigate to="/" />} />
+        <Route path="/" element={<KidsJourney />} />
+         <Route path="/quiz-game/:id" element={<QuizGame />} /> 
+        <Route path="/market" element={<Market />} />
+        <Route path="/createagame" element={<GameManager />} />
         {/* Catch-all route for unknown paths */}
       <Route path="*" element={<Navigate to="/" />} />
     </Routes>

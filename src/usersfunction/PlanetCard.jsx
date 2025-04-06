@@ -1,5 +1,5 @@
 import React from 'react';
-import './kidsjourney.css'; // Import the same CSS file
+import './kidsjourney.css'; // Import the CSS for consistent styling
 
 const PlanetCard = ({ name, description, subject, imageUrl }) => {
   return (

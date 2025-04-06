@@ -13,10 +13,11 @@ function DashboardLayout() {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="flex-column">
+                <Nav.Link href='/'></Nav.Link>
                 <Nav.Link href="/userhome">Home</Nav.Link>
                 <Nav.Link href="/login">Logout</Nav.Link>
                 <Nav.Link href="/kidsjourney">Kids Journey</Nav.Link>
-                <Nav.Link href="/creategame">Make A Space Game!</Nav.Link>
+                <Nav.Link href="/createagame">Make A Space Game!</Nav.Link>
                 <Nav.Link href="/findactivity">Learn by playing</Nav.Link>
                 {/* Add more navigation links here */}
               </Nav>

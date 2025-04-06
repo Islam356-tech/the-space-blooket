@@ -1,58 +1,27 @@
 import React from 'react';
-import './kidsjourney.css'; // Include the CSS file for styling
-import PlanetCard from './PlanetCard'; // Ensure PlanetCard.jsx is in the same directory
-
-// Generate 1000 planets with subjects
-const generatePlanets = () => {
-  const planetNames = [
-    'Mercury', 'Venus', 'Earth', 'Mars', 'Jupiter', 'Saturn', 'Uranus', 'Neptune', 'Pluto', 'Ceres',
-    'Eris', 'Haumea', 'Makemake', 'Sedna', 'Orcus', 'Kepler', 'Lyra', 'Draco', 'Andromeda', 'Pavo'
-  ];
-
-  const subjects = ['Math', 'Science', 'History', 'Geography', 'Astronomy', 'Biology', 'Chemistry', 'Physics', 'Art', 'Coding'];
-
-  const descriptions = [
-    'Mysterious and full of wonder.', 
-    'Home to fascinating phenomena.',
-    'A planet filled with secrets.',
-    'An explorer\'s dream.',
-    'Full of adventure and knowledge.'
-  ];
-
-  return Array.from({ length: 1000 }, (_, index) => ({
-    id: index + 1,
-    name: `Planet ${planetNames[index % planetNames.length]} ${index + 1}`,
-    description: descriptions[index % descriptions.length],
-    subject: subjects[index % subjects.length],
-    imageUrl: `https://source.unsplash.com/200x200/?planet,space&sig=${index}` // Random images
-  }));
-};
+import './kidsjourney.css';
+import { Link } from 'react-router-dom';
+import { generatePlanets } from './PlanetData';
 
 const KidsJourney = () => {
-  const planetsData = generatePlanets();
-
-  // Split into rows of 5
-  const planetRows = [];
-  for (let i = 0; i < planetsData.length; i += 5) {
-    planetRows.push(planetsData.slice(i, i + 5));
-  }
+  const planets = generatePlanets();
 
   return (
     <div className="journey-container">
       <h1>🌌 Planetary Journey 🚀</h1>
-      {planetRows.map((row, rowIndex) => (
-        <div className="planet-row" key={rowIndex}>
-          {row.map((planet) => (
-            <PlanetCard
-              key={planet.id}
-              name={planet.name}
-              description={planet.description}
-              subject={planet.subject}
-              imageUrl={planet.imageUrl}
-            />
-          ))}
-        </div>
-      ))}
+      <div className="planet-grid">
+        {planets.map((planet) => (
+          <Link to={`/quiz-game/${planet.id}`} key={planet.id} className="planet-card-link">
+            <div className="planet-card">
+              <img src={planet.imageUrl} alt={planet.name} className="planet-image" />
+              <div className="planet-info">
+                <h2>{planet.name}</h2>
+                <p>📚 {planet.subject}</p>
+              </div>
+            </div>
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
